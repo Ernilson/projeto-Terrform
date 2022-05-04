@@ -1,8 +1,8 @@
-package br.com.cleanCode;
+package br.com.cleanCode.controllerTest;
 
 import org.hamcrest.Matchers;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import br.com.cleanCode.CleanCodeApplicationTests;
 import br.com.cleanCode.controller.CadastroController;
 import br.com.cleanCode.model.CadastroModel;
 
@@ -43,7 +44,8 @@ public class CadastroControllerTest extends CleanCodeApplicationTests {
 				.contentType(json)
 				)
 				.andExpect(MockMvcResultMatchers.status().isCreated())
-				.andExpect(MockMvcResultMatchers.header().string("location", Matchers.containsString("http://localhost/cad")));						
+				.andExpect(MockMvcResultMatchers.header()
+						.string("location", Matchers.containsString("http://localhost/cad")));						
 	}
 
 }

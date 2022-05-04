@@ -1,0 +1,27 @@
+Como instalar o Terraform no Ubuntu.
+--------------------------------------------
+//para baixar e renomera o terraform
+
+curl https://releases.hashicorp.com/terraform/1.1.9/terraform_1.1.9_linux_amd64.zip -o terraform.zip
+
+//comando para deszipar
+unzip terraform.zip
+
+//comando para conceder permissão
+chmod +x terraform && sudo mv terraform /usr/local/bin/
+
+//para verificar se o software esta instalado
+terraform -version
+
+//comando para instalar o pytho3
+sudo apt-get install python3-pip
+
+//comando para instalar o awscli no ubunto pelo terminal
+python3 -m pip install awscli
+apt-get install awscli 
+
+//comando para configurar o awscli
+aws configure
+-ID Key
+-Secret-acces_key
+-ea-1
